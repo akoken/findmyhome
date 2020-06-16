@@ -36,7 +36,7 @@ def parse_page(search_results_item):
         link = td.find('a', {'class': 'classifiedTitle'})['href']
         search_result = "{0}/{1}".format(sahibinden_url, link)
         if search_result in PREVIOUS_FOUNDED_HOUSES:
-            print('{0} already in list.'.format(search_result))
+            print('{0} is already in list.'.format(search_result))
         else:
             send_slack_notification(search_result)
             print(search_result)
